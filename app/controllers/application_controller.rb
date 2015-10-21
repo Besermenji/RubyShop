@@ -18,19 +18,21 @@ class ApplicationController < ActionController::Base
   #gets current users role names
   private
   def get_role_array
-    users_roles = UserRole.find_by(user_id: @current_user.id).to_a
-    role_names = [] 
-    users_roles.each do |x|
-      role_names << Role.find_by(id: x.role_id).role_name
+    role_names = []
+    if current_user
+      users_roles = UserRole.where(user_id: @current_user.id).to_a 
+      users_roles.each do |x|
+        role_names << Role.find_by(id: x.role_id).name
+      end
     end
-
     role_names
   end
-
+  
+  helper_method :is_admin?
   def is_admin?
     get_role_array.include? "admin"
   end
-
+  helper_method :is_user?
   def is_user?
     get_role_array.include? "user"
   end

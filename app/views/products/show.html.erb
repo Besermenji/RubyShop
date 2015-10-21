@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+
+<h2><%= @product.name %></h2>
+
+
+<img width="64" height="380" src=<%= @product.image %>
+<br>
+<p><%= @product.description %><p>
+<p>Price: <b><%=@product.price%> </b> </p>
+ 
+
+<% if is_admin? %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
+<%= link_to 'Back', category_products_path(@product.category_id) %> <br>
+<%= link_to 'Destroy Product', "/products/"+@product.id.to_s, method: "delete" %>

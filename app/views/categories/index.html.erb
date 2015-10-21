@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wellcome to Ruby Shop!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+       <td><img src=<%=category.image%> height="100" width="50"</td>
+        <td><%= link_to category.name, category_products_path(category) %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

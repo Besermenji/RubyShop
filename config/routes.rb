@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-
+  resources :products
+  root "categories#index"
+  resources :categories do 
+    resources :products 
+  end
   resources :sessions
   resources :users
   get "/signup" => "users#new" 
