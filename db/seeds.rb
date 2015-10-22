@@ -5,11 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+user1 = User.create(first_name: "Test1", last_name: "Test2", email:"t@e.st", password:"test")
 user = User.create(first_name: "Test", last_name:"Testoni", email:"testo@te.st", password:"test")
 role1 = Role.create(name: "admin")
 role2 = Role.create(name: "user")
-
+user_role1 = UserRole.create(role_id:role1.id, user_id:user1.id)
 user_role = UserRole.create(role_id:role1.id, user_id:user.id)
 
 category1 = Category.create(name: "Vinjak", image: "http://www.neretvakomerc.com/wp-content/uploads/2011/06/3509-Vinjak-1l-Rubin.jpg")
