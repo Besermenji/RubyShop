@@ -29,7 +29,15 @@
       <td>
       <%=link_to product.name, product %> 
      </td>
-     
+     </tr>
+     <tr>
+     <td>
+     <%= form_for( product, :url => "/basket", :html => { :method => :post } ) do |p| %>
+       <%= p.hidden_field :id %>
+       <%= p.submit %>
+     <% end %>
+     </td>
+     </tr>     
       </tbody>
      </table></td>
     <% end %>

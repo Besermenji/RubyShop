@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Baskets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+ <% if @baskets %>  
+  <% @baskets.each do |basket| %>
+<tr><!--<%= p = Product.find_by_id(basket.product_id) %>-->
+         <td><%= p.name%></td>
+         <td><%= p.price %> </td>
+      </tr>
+      <tr>
+        <td><%= link_to 'Show', basket %></td>
+        <td><%= link_to 'Edit', edit_basket_path(basket) %></td>
+        <td><%= link_to 'Destroy', basket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+   <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
