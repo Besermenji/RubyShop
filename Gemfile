@@ -28,7 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "formtastic-bootstrap"
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem "pdfkit"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

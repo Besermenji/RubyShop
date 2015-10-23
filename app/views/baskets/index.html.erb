@@ -10,16 +10,16 @@
   </thead>
 
   <tbody>
- <% if @baskets %>  
-  <% @baskets.each do |basket| %>
-<tr><!--<%= p = Product.find_by_id(basket.product_id) %>-->
+ <% if @products %>  
+  <% @products.each do |p| %>
+<tr>
          <td><%= p.name%></td>
          <td><%= p.price %> </td>
-      </tr>
-      <tr>
-        <td><%= link_to 'Show', basket %></td>
-        <td><%= link_to 'Edit', edit_basket_path(basket) %></td>
-        <td><%= link_to 'Destroy', basket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+      
+
+
+       <td><%=link_to "Remove from basket", "baskets/"+p.id.to_s, method:"delete"%></td> 
       </tr>
     <% end %>
    <% end %>

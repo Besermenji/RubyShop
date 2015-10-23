@@ -1,8 +1,10 @@
 <h1>Login</h1>
 
 <%= form_for(:session, url: login_path) do |u| %>
+<p id="user_problem"></p>
 <%= u.email_field :email, :placeholder => "Email" %>
 <br>
+<p id="pass_problem"></p>
 <%= u.password_field :password, :placeholder => "Password"%>
 <br>
 <%= u.submit "Login" %>
