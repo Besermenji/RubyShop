@@ -1,6 +1,6 @@
 <h1>Login</h1>
 
-<%= form_for(:session, url: login_path) do |u| %>
+<%= form_for(:session, url: login_path, remote: true) do |u| %>
 <p id="user_problem"></p>
 <%= u.email_field :email, :placeholder => "Email" %>
 <br>

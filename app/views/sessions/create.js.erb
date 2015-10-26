@@ -1,0 +1,9 @@
+<%if @user && @user.authenticate(params[:session][:password]) %>
+  alert("Wellcome back, <%= @user.first_name%>");
+  <%= session[:user_id] = @user.id%>
+   $(location).attr("href","/"); 
+<% else %>
+  $("#user_problem").empty();
+  $("#user_problem").text("Wrong username / password");
+  $("#user_problem").css({"color":"red"});
+<%end%>
